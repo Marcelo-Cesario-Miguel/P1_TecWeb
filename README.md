@@ -10,12 +10,12 @@ Para rodar, basta apenas criar as tabelas no MySQL para o projeto funcionar.
 - Crie um database chamadoescola
 esse database deve conter 3 tabelas, sendo elas: aluno, disciplina e aluno_disciplina (sendo uma many-to-many).
 - aluno:
-    CREATE TABLE aluno (
+    `CREATE TABLE aluno (
  id INT NOT NULL AUTO_INCREMENT,
  nome VARCHAR(32) NOT NULL,
  curso VARCHAR(32) NOT NULL,
  PRIMARY KEY (ID)
-);
+);`
 - disciplina:
     CREATE TABLE disciplina (
  id INT NOT NULL AUTO_INCREMENT,
