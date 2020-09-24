@@ -4,7 +4,8 @@ Este repositório contém o código do primeiro projeto da disciplina Tecnologia
  
 ## Pré-Requisitos
 
-Para rodar, é necessário criar algumas tabelas no MySQL para que integrar o front ao back-end.
+Para rodar, é necessário criar algumas tabelas no MySQL e configurar o código para o seu MYSQL
+
 ### Instrução para a criação das tabelas
 
 - Crie um database chamado escola:
@@ -31,6 +32,10 @@ Agora, dentro desse database ( `$ CREATE DATABASE escola;` ), crie as seguintes 
     $ CREATE TABLE aluno_disciplina (id INT NOT NULL AUTO_INCREMENT, aluno_id INT NOT NULL REFERENCES aluno(id),
     disciplina_id INT NOT NULL REFERENCES disciplina(id),PRIMARY KEY (ID));
     ```
+ 
+ ### Modificações no código
+ 
+ Feito as tabelas, vá em *.\build\classes\br\edu\insper* e modifique o arquivo *DAO.CLASS*, colocando seus dados na linha `16`
  
  #### Algumas considerações :)
 Apesar do nome, o site foi feito para que a tabela de disciplina seja na verdade uma tabela de projetos. Dessa forma, o site tenta passar o entendimento de ser uma plataforma parecida com o trello, em que temos uma equipe, de alunos de diferentes cursos trabalhando em conjunto, permitindo que cada membro possa realizar projetos individuais ou em grupo.
