@@ -41,39 +41,6 @@ public class criaaluno extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		DAO dao = null;
-		try {
-			dao = new DAO();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Aluno aluno= new Aluno();
-		aluno.setNome(request.getParameter("nome"));
-		aluno.setCurso(request.getParameter("curso"));
-		List<Aluno> alunos= null;
-		
-		try {
-			dao.adicionaAluno(aluno);
-			alunos= dao.getAlunos();
-			for(Aluno i:alunos) {
-				if (i.getNome().equals(aluno.getNome())) {
-					aluno.setId(i.getId());
-				}
-			}
-			
-			request.setAttribute("aluno", aluno);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("lista");
-			dispatcher.forward(request, response);
-			dao.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}
 
