@@ -27,7 +27,7 @@
         </div>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Filtrar por
+    Ordenar pela dificuldade
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <form class ="dropdown-item" action='ordenar_pela_dificuldade' method='post'>
@@ -43,27 +43,6 @@
 			<input type='submit' value='Decrescente'>
 			</form>
   </div>
-</div>
-<div class='container'>
-	<p>Ordenar pela dificuldade em:</p>
-	<div class= 'row'>
-		<div class="col-sm-4">
-			<form action='ordenar_pela_dificuldade' method='get'>
-			<input type ='hidden' name='ordem' value='ASC'>
-			<input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
-			<input type ='hidden' name='alunoid' value='${aluno.getId()}'>
-			<input type='submit' value='Crescente'>
-			</form>
-	    </div>
-	    <div class="col-sm-4">
-			<form action='ordenar_pela_dificuldade' method='get'>
-			<input type ='hidden' name='ordem' value='DESC'>
-			<input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
-			<input type ='hidden' name='alunoid' value='${aluno.getId()}'>
-			<input type='submit' value='Decrescente'>
-			</form>
-	    </div>
-	</div>
 </div>
 <table class="table table-striped table-responsive table-bordered">
 <thead>
