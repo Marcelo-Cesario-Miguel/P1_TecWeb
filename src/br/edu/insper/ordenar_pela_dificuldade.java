@@ -30,33 +30,8 @@ public class ordenar_pela_dificuldade extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		try {
-			DAO dao = new DAO();
-		
-		String ordem =request.getParameter("ordem");
-		List<AlunoJoinDisciplina> alunos_disciplinas= null;
-		Aluno aluno = new Aluno();
-		aluno.setId(Integer.valueOf(request.getParameter("alunoid")));
-		aluno.setNome(request.getParameter("alunonome"));
-		
-		
-		alunos_disciplinas = dao.getListaByDificuldade(ordem);
-		request.setAttribute("alunos_disciplinas", alunos_disciplinas);
-		request.setAttribute("aluno", aluno);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/Lista.jsp");
-		dispatcher.forward(request, response);
-		dao.close();
-		
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 
 	/**
@@ -64,7 +39,32 @@ public class ordenar_pela_dificuldade extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		// TODO Auto-generated method stub
+				try {
+					DAO dao = new DAO();
+				
+				String ordem =request.getParameter("ordem");
+				List<AlunoJoinDisciplina> alunos_disciplinas= null;
+				Aluno aluno = new Aluno();
+				aluno.setId(Integer.valueOf(request.getParameter("alunoid")));
+				aluno.setNome(request.getParameter("alunonome"));
+				
+				
+				alunos_disciplinas = dao.getListaByDificuldade(ordem);
+				request.setAttribute("alunos_disciplinas", alunos_disciplinas);
+				request.setAttribute("aluno", aluno);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/Lista.jsp");
+				dispatcher.forward(request, response);
+				dao.close();
+				
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+		}
 
 }

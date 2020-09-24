@@ -30,10 +30,18 @@
     Filtrar por
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <div class ='dropdown-divider'></div>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <form class ="dropdown-item" action='ordenar_pela_dificuldade' method='post'>
+			<input type ='hidden' name='ordem' value='ASC'>
+			<input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
+			<input type ='hidden' name='alunoid' value='${aluno.getId()}'>
+			<input type='submit' value='Crescente'>
+			</form>
+    			<form action='ordenar_pela_dificuldade' method='post'>
+			<input type ='hidden' name='ordem' value='DESC'>
+			<input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
+			<input type ='hidden' name='alunoid' value='${aluno.getId()}'>
+			<input type='submit' value='Decrescente'>
+			</form>
   </div>
 </div>
 <div class='container'>
@@ -92,7 +100,7 @@
 </tr>
 </c:forEach>
 </table>
-<form action='lista' method='get'>
+<form action='visao_geral' method='post'>
 <input type ='hidden' name='alunoid' value='${aluno.getId()}'>
 <input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
 <input type="submit" class="btn btn-primary" value='Visão geral'>
