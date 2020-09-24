@@ -14,7 +14,7 @@
 <div class="page-header">
             <h1>Cadastro</h1>
         </div>
-<form action='' method='post'>
+<form action='register' method='post'>
 Nome: <input type='text' name='nome'><br>
 Curso: <input type='text' name='curso'><br>
 <input type ='submit' value='Cadastrar'>

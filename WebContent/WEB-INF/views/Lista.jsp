@@ -20,7 +20,8 @@
 </head>
 
 <body>
-<a class ='btn btn-danger' href=''> Log out</a>
+<div class='container'>
+<a class ='btn btn-danger' href='register'> Log out</a>
 <div class="page-header">
             <h1>Bem vindo de volta ${aluno.getNome()}</h1>
             <h2>Lista de tarefas da sua equipe</h2>
@@ -61,19 +62,22 @@
 <td>${aluno_disciplina.getMateria()} </td>
 <td>${aluno_disciplina.getDificuldade()} </td>
 <td>
+
 <form action='remove' method='post'>
 <input type='hidden' name='id' value='${aluno_disciplina.getDisciplinaId()}'>
 <input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
 <input type ='hidden' name='alunoid' value='${aluno.getId()}'>			
-<input type='submit' value='remover'>
+<input type='submit' class ='btn btn-danger' value='remover'>
 </form>
+</td>
+<td>
 <form action='altera' method='get'>
 <input type ='hidden' name='materia' value='${aluno_disciplina.getMateria()}'>
 <input type ='hidden' name='dificuldade' value='${aluno_disciplina.getDificuldade()}'>
 <input type ='hidden' name='id' value='${aluno_disciplina.getDisciplinaId()}'>
 <input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
 <input type ='hidden' name='alunoid' value='${aluno.getId()}'>			
-<input type='submit' value='atualizar'>
+<input type='submit' class ='btn btn-info' value='atualizar'>
 </form>
 </td>
 </tr>
@@ -87,7 +91,7 @@
 <form action='criadisciplina' method='get'>
 <input type ='hidden' name='alunoid' value='${aluno.getId()}'>
 <input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
-<input type="submit" class="btn btn-primary" value='Adicione tarefas para você'>
+<input type="submit" class="btn btn-success" value='Adicione tarefas para você'>
 </form>
 <div class='container'>
 <form action='filtra' method='post'>
@@ -95,13 +99,9 @@
 <input type='text' class="form-control" name='nome' placeholder="Nome do membro"><br>
 <input type ='hidden' name='alunonome' value='${aluno.getNome()}'>
 <input type ='hidden' name='alunoid' value='${aluno.getId()}'>	
-<button type="submit" class="btn btn-primary" value='filtrar'>Buscar</button>
+<button type="submit" class="btn btn-info" value='filtrar'>Buscar</button>
 </form>
  </div>
- <div class="mx-auto" style="width: 200px;">
-  <p> </p>
-
- 
 </div>
 </body>
 
