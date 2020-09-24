@@ -11,6 +11,9 @@
 Projeto: <input type='text' name='materia' value='${param.materia}'><br>
 Dificuldade: <input type='number' name='dificuldade' value ='${param.dificuldade}' ><br>
 <input type ='hidden' name='id' value='${param.id}'>
+<input type ='hidden' name='alunonome' value='${param.alunonome}'>
+<input type ='hidden' name='alunoid' value='${param.alunoid}'>			
+
 <input type ='submit' value='atualizar'>
 
 

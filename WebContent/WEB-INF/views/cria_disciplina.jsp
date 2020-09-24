@@ -11,7 +11,8 @@
 <form action='criadisciplina' method='post'>
 Projeto: <input type='text' name='projeto' ><br>
 Dificuldade (0-10): <input type='number' name='dificuldade' ><br>
-<input type ='hidden' name='alunoid' value='${param.alunoid}'>
+<input type ='hidden' name='alunonome' value='${param.alunonome}'>
+<input type ='hidden' name='alunoid' value='${param.alunoid}'>	
 <input type ='submit' value='atualizar'>
 
 

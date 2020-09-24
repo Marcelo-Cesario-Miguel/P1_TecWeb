@@ -53,6 +53,11 @@ public class Lista extends HttpServlet {
 		
 		alunos_disciplinas = dao.getLista();
 		request.setAttribute("alunos_disciplinas", alunos_disciplinas);
+//		Aluno aluno = new Aluno();
+//		aluno.setId(Integer.valueOf(request.getParameter("alunoid")));
+//		aluno.setNome(request.getParameter("alunonome"));
+//
+//		request.setAttribute("aluno", aluno);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/Lista.jsp");
 		dispatcher.forward(request, response);
 		dao.close();

@@ -58,6 +58,11 @@ public class altera extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Aluno aluno = new Aluno();
+		aluno.setId(Integer.valueOf(request.getParameter("alunoid")));
+		aluno.setNome(request.getParameter("alunonome"));
+		request.setAttribute("aluno", aluno);
+		
 		RequestDispatcher dispatcher= request.getRequestDispatcher("lista");
 		dispatcher.forward(request, response);
 	}

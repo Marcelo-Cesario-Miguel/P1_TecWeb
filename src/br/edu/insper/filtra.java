@@ -32,19 +32,35 @@ public class filtra extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		try {
 			DAO dao = new DAO();
-		int dificuldade =Integer.valueOf(request.getParameter("dificuldade"));
+		String nome_membro=request.getParameter("nome");
 		List<AlunoJoinDisciplina> alunos_disciplinas= null;
 		List<AlunoJoinDisciplina> alunos_disciplinas_filtrados = new ArrayList<AlunoJoinDisciplina>();
 		alunos_disciplinas= dao.getLista();
+		int intIndex = 0;
 		for(AlunoJoinDisciplina i:alunos_disciplinas) {
-			if(i.getDificuldade()== dificuldade) {
+			intIndex = i.getAluno().indexOf(nome_membro);
+			if(intIndex != -1) {
 				alunos_disciplinas_filtrados.add(i);
 			}
 		}
+		
+		Aluno aluno = new Aluno();
+		aluno.setId(Integer.valueOf(request.getParameter("alunoid")));
+		aluno.setNome(request.getParameter("alunonome"));
+		request.setAttribute("aluno", aluno);
+		
 		request.setAttribute("alunos_disciplinas", alunos_disciplinas_filtrados);
-		RequestDispatcher dispatcher= request.getRequestDispatcher("/WEB-INF/views/filtra.jsp");
+		RequestDispatcher dispatcher= request.getRequestDispatcher("/WEB-INF/views/Lista.jsp");
 		dispatcher.forward(request, response);
 		dao.close();
 		
@@ -55,14 +71,6 @@ public class filtra extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
