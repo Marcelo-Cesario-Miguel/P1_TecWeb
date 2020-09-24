@@ -15,11 +15,10 @@ esse database deve conter 3 tabelas, sendo elas: aluno, disciplina e aluno_disci
  id INT NOT NULL AUTO_INCREMENT,
  nome VARCHAR(32) NOT NULL,
  curso VARCHAR(32) NOT NULL,
- PRIMARY KEY (ID)
-);`
+ PRIMARY KEY (ID));`
 - disciplina:
 
-CREATE TABLE disciplina (
+`CREATE TABLE disciplina (
  id INT NOT NULL AUTO_INCREMENT,
  nome VARCHAR(32) NOT NULL,
  dificuldade INT(2) NOT NULL,
